@@ -57,7 +57,6 @@ CircularInt operator - (int num, CircularInt const &r){
     temp.CurrTime = norm(temp.CurrTime - num-1, temp.minValue, temp.maxValue);
     return temp;
 }
-
 CircularInt operator + (CircularInt const &r, CircularInt const &l) {
     if(r.minValue != l.minValue || r.maxValue != l.maxValue) throw string("Cant do this!");
     else{
@@ -70,7 +69,6 @@ CircularInt& CircularInt::operator *= (int const num){
     CurrTime = norm(CurrTime * num, minValue, maxValue);
     return *this;
 }
-
 CircularInt& CircularInt::operator /= (CircularInt const & r){
     CurrTime /= r.CurrTime;
     CurrTime = CurrTime % maxValue;
@@ -83,7 +81,6 @@ CircularInt& CircularInt::operator /= (int num){
     if(CurrTime < minValue) CurrTime += maxValue;
     return *this;
 }
-
 CircularInt& operator / (CircularInt const &r, int num) {
     CircularInt temp {r.minValue, r.maxValue};
     temp.CurrTime = r.CurrTime;
@@ -91,34 +88,53 @@ CircularInt& operator / (CircularInt const &r, int num) {
     else throw "\"There is no number x in {"+to_string(r.minValue)+","+to_string(r.maxValue)+"} such that x*"+to_string(num)+"="+to_string(r.CurrTime)+"\" ";
     return temp;
 }
-//  == = !=  //
 CircularInt &CircularInt::operator=(CircularInt const & l) {
     CurrTime= norm(l.CurrTime,minValue,maxValue);
     return *this;
 }
-
 bool operator==(CircularInt const & r ,CircularInt const & l ) {
     return r.CurrTime == l.CurrTime;;
 }
-
 bool operator==(CircularInt const & r , int const l ) {
     return r.CurrTime == l;
 }
-
 bool operator==(int const r, CircularInt const & l) {
     return r == l.CurrTime;
 }
-
 bool operator!=(CircularInt const & r , CircularInt const & l ) {
     return !(r.CurrTime == l.CurrTime);
 }
-
 bool operator!=(int const r, CircularInt const & l) {
     return !(r == l.CurrTime);
 }
-
 bool operator!=(CircularInt const & r , int const l ) {
     return !(r.CurrTime == l);
+}
+CircularInt &CircularInt::operator+=(CircularInt const &r) {
+    CurrTime = norm(CurrTime+r.CurrTime,minValue,maxValue);
+    return *this;
+}
+
+CircularInt &CircularInt::operator-=(CircularInt const &r) {
+    CurrTime = norm(CurrTime-r.CurrTime,minValue,maxValue);
+    return *this;
+}
+
+CircularInt &CircularInt::operator*=(CircularInt const &r) {
+    CurrTime = norm(CurrTime*r.CurrTime,minValue,maxValue);
+    return *this;
+}
+
+CircularInt &CircularInt::operator--() {
+    *this -= 1;
+    return *this;
+}
+
+const CircularInt CircularInt::operator--(int) {
+    CircularInt temp {minValue, maxValue};
+    temp.CurrTime= CurrTime;
+    CurrTime = norm(CurrTime - 1, minValue, maxValue);
+    return temp;
 }
 
 
