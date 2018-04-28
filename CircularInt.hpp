@@ -6,7 +6,6 @@
 #define CPPEX4_CIRCULARINT_H
 
 #endif //CPPEX4_CIRCULARINT_H
-
 #include <iostream>
 using namespace std;
 
@@ -24,6 +23,16 @@ public:
     CircularInt(int min, int max);
     ~CircularInt();
 
+    // == !=  = //
+    CircularInt& operator = (CircularInt const &);
+    friend bool operator == (CircularInt const &,CircularInt const &);
+    friend bool operator == (int const,CircularInt const &);
+    friend bool operator == (CircularInt const &,int const);
+
+    friend bool operator != (CircularInt const &,CircularInt const &);
+    friend bool operator != (int const,CircularInt const &);
+    friend bool operator != (CircularInt const &,int const);
+    //
     CircularInt& operator += (int num);
     CircularInt& operator -= (int num);
     CircularInt& operator ++ ();
