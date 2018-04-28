@@ -91,6 +91,37 @@ CircularInt& operator / (CircularInt const &r, int num) {
     else throw "\"There is no number x in {"+to_string(r.minValue)+","+to_string(r.maxValue)+"} such that x*"+to_string(num)+"="+to_string(r.CurrTime)+"\" ";
     return temp;
 }
+//  == = !=  //
+CircularInt &CircularInt::operator=(CircularInt const & l) {
+    CurrTime= norm(l.CurrTime,minValue,maxValue);
+    return *this;
+}
+
+bool operator==(CircularInt const & r ,CircularInt const & l ) {
+    return r.CurrTime == l.CurrTime;;
+}
+
+bool operator==(CircularInt const & r , int const l ) {
+    return r.CurrTime == l;
+}
+
+bool operator==(int const r, CircularInt const & l) {
+    return r == l.CurrTime;
+}
+
+bool operator!=(CircularInt const & r , CircularInt const & l ) {
+    return !(r.CurrTime == l.CurrTime);
+}
+
+bool operator!=(int const r, CircularInt const & l) {
+    return !(r == l.CurrTime);
+}
+
+bool operator!=(CircularInt const & r , int const l ) {
+    return !(r.CurrTime == l);
+}
+
+
 
 //CircularInt &operator-(int num);
 //CircularInt &operator-=(int num);
