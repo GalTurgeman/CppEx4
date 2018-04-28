@@ -25,6 +25,8 @@ public:
 
     // == !=  = //
     CircularInt& operator = (CircularInt const &);
+    CircularInt& operator = (int num);
+
     friend bool operator == (CircularInt const &,CircularInt const &);
     friend bool operator == (int const,CircularInt const &);
     friend bool operator == (CircularInt const &,int const);
@@ -32,17 +34,31 @@ public:
     friend bool operator != (CircularInt const &,CircularInt const &);
     friend bool operator != (int const,CircularInt const &);
     friend bool operator != (CircularInt const &,int const);
-    //
+    //*= /= += -= //
     CircularInt& operator += (int num);
+    CircularInt& operator += (CircularInt const & r);
+
     CircularInt& operator -= (int num);
+    CircularInt& operator -= (CircularInt const & r);
+
+    CircularInt& operator *= (int num);
+    CircularInt& operator *= (CircularInt const & r);
+
+    CircularInt& operator /= (CircularInt const & r);
+    CircularInt& operator /= (int num );
+    //++ -- //
     CircularInt& operator ++ ();
     const CircularInt operator ++ (int);
+
+    CircularInt& operator -- ();
+    const CircularInt operator -- (int);
+    //
     CircularInt operator - ();
     friend CircularInt operator - (int num, CircularInt const & r );
     friend CircularInt operator + (CircularInt const & r, CircularInt const & l);
-    CircularInt& operator *= (int num);
-    CircularInt& operator /= (CircularInt const & r);
-    CircularInt& operator /= (int num );
+
+
+
     friend CircularInt& operator /(CircularInt const &r ,int num);
 
     //Overiding "toString" Object
