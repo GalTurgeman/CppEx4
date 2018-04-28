@@ -83,3 +83,43 @@ public:
         return output;
     }
 };
+
+inline bool operator<=(CircularInt const & r, int const l) {
+    return r.CurrTime <= l;
+}
+inline bool operator<=(int const r , CircularInt const & l ) {
+    return r <= l.CurrTime;
+}
+inline bool operator<=(CircularInt const & r, CircularInt const & l ) {
+    return r.CurrTime <= l.CurrTime;
+}
+
+inline bool operator>=(CircularInt const & r, int const l) {
+    return r.CurrTime >= l;
+}
+inline bool operator>=(int const r , CircularInt const & l ) {
+    return r >= l.CurrTime;
+}
+inline bool operator>=(CircularInt const & r, CircularInt const & l ) {
+    return r.CurrTime >= l.CurrTime;
+}
+
+inline bool operator<(CircularInt const & r, int const l) {
+    return r.CurrTime < l;
+}
+inline bool operator<(int const r , CircularInt const & l ) {
+    return r < l.CurrTime;
+}
+inline bool operator<(CircularInt const & r, CircularInt const & l ) {
+    return r.CurrTime < l.CurrTime;
+}
+
+inline bool operator>(CircularInt const & r, int const l) {
+    return r.CurrTime > l;
+}
+inline bool operator>(int const r , CircularInt const & l ) {
+    return r > l.CurrTime;
+}
+inline bool operator>(CircularInt const & r, CircularInt const & l ) {
+    return r.CurrTime >= l.CurrTime;
+}
