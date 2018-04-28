@@ -34,6 +34,22 @@ public:
     friend bool operator != (CircularInt const &,CircularInt const &);
     friend bool operator != (int const,CircularInt const &);
     friend bool operator != (CircularInt const &,int const);
+    //<= >= > < //
+    friend bool operator <= (CircularInt const &,int const);
+    friend bool operator <= (int const,CircularInt const &);
+    friend bool operator <= (CircularInt const &,CircularInt const &);
+
+    friend bool operator >= (CircularInt const &,int const);
+    friend bool operator >= (int const,CircularInt const &);
+    friend bool operator >= (CircularInt const &,CircularInt const &);
+
+    friend bool operator < (CircularInt const &,int const);
+    friend bool operator < (int const,CircularInt const &);
+    friend bool operator < (CircularInt const &,CircularInt const &);
+
+    friend bool operator > (CircularInt const &,int const);
+    friend bool operator > (int const,CircularInt const &);
+    friend bool operator > (CircularInt const &,CircularInt const &);
     //*= /= += -= //
     CircularInt& operator += (int num);
     CircularInt& operator += (CircularInt const & r);
