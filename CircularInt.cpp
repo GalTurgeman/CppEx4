@@ -136,45 +136,6 @@ const CircularInt CircularInt::operator--(int) {
     CurrTime = norm(CurrTime - 1, minValue, maxValue);
     return temp;
 }
-bool operator<=(CircularInt const & r, int const l) {
-    return r.CurrTime <= l;
-}
-bool operator<=(int const r , CircularInt const & l ) {
-    return r <= l.CurrTime;
-}
-bool operator<=(CircularInt const & r, CircularInt const & l ) {
-    return r.CurrTime <= l.CurrTime;
-}
-
-bool operator>=(CircularInt const & r, int const l) {
-    return r.CurrTime >= l;
-}
-bool operator>=(int const r , CircularInt const & l ) {
-    return r >= l.CurrTime;
-}
-bool operator>=(CircularInt const & r, CircularInt const & l ) {
-    return r.CurrTime >= l.CurrTime;
-}
-
-bool operator<(CircularInt const & r, int const l) {
-    return r.CurrTime < l;
-}
-bool operator<(int const r , CircularInt const & l ) {
-    return r < l.CurrTime;
-}
-bool operator<(CircularInt const & r, CircularInt const & l ) {
-    return r.CurrTime < l.CurrTime;
-}
-
-bool operator>(CircularInt const & r, int const l) {
-    return r.CurrTime > l;
-}
-bool operator>(int const r , CircularInt const & l ) {
-    return r > l.CurrTime;
-}
-bool operator>(CircularInt const & r, CircularInt const & l ) {
-    return r.CurrTime >= l.CurrTime;
-}
 
 //CircularInt &operator-(int num);
 //CircularInt &operator-=(int num);
